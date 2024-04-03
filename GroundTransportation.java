@@ -11,7 +11,18 @@ public class GroundTransportation extends Transport {
     }
 
     public void setLicensePlate(String licensePlate) {
-
         this.licensePlate = licensePlate;
+    }
+
+    public double getPriceWithFees() {
+        return super.getPrice() + (super.getPrice() * FEES / 100);
+    }
+
+    public String getTransportType() {
+        return "Transporte Terrestre";
+    }
+
+    public String toString() {
+        return super.toString() + "           Matricula: " + this.licensePlate + "\n";
     }
 }
