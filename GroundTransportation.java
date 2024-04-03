@@ -22,7 +22,13 @@ public class GroundTransportation extends Transport {
         return "Transporte Terrestre";
     }
 
+    public double getFees() {
+        return FEES;
+    }
+
+    @Override
     public String toString() {
-        return super.toString() + "           Matricula: " + this.licensePlate + "\n";
+        super.setFees(FEES);
+        return super.toString() + "      Matricula: " + this.licensePlate + "\n";
     }
 }

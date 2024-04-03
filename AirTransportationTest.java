@@ -1,5 +1,4 @@
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /**
  * The test class AirTransportationTest.
  *
- * @author  POO
+ * @author POO
  * @version 03/2024
  */
 
@@ -57,9 +56,9 @@ public class AirTransportationTest {
                 "             ID: " + airTransport.getId() + "\n" +
                 "         Origem: \n" +
                 "        Destino: \n" +
-                "          Preço:  0,00€\n" +
-                "     Honorarios: 4,00%\n" +
-                "    Preço Final: 0,00€\n" +
+                "          Preço:  0.00€\n" +
+                "     Honorarios: 4.00%\n" +
+                "    Preço Final: 0.00€\n" +
                 "           Nome: Boeing 747\n" +
                 "  NºContentores: 10\n";
         assertEquals(expected, airTransport.toString());
@@ -69,11 +68,11 @@ public class AirTransportationTest {
     public void testGetTransportType() {
         assertEquals("Transporte Aereo", airTransport.getTransportType());
     }
-    
+
     @Test
-    public void testGetPriceWithFees(){
+    public void testGetPriceWithFees() {
         airTransport.setPrice(600.0);
-        assertEquals(624.0,airTransport.getPriceWithFees(), 0.01);
-        
+        assertEquals(624.0, airTransport.getPriceWithFees(), 0.01);
+
     }
 }

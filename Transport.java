@@ -7,7 +7,7 @@
 
 public class Transport {
 
-    private static int auto = 0; 
+    private static int auto = 0;
 
     private final String id;
     private String origin;
@@ -76,15 +76,15 @@ public class Transport {
     public void setAvailable(boolean available) {
         this.available = available;
     }
- 
+
     // Nível 5
-    public void resetValues(){
+    public void resetValues() {
         setOrigin("");
         setDestination("");
         setAvailable(true);
         setPrice(0.0);
     }
-    
+
     // Nível 5
     public void setValues(String origin, String destination, double price) {
         setOrigin(origin);
@@ -92,19 +92,19 @@ public class Transport {
         setAvailable(false);
         setPrice(price);
     }
-    
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
 
-        sb.append(String.format("\n%15s: %s\n", "Tipo Transporte", getTransportType()));  
+        sb.append(String.format("\n%15s: %s\n", "Tipo Transporte", getTransportType()));
         sb.append(String.format("%15s: %s\n", "ID", this.id));
         sb.append(String.format("%15s: %s\n", "Origem", this.origin));
         sb.append(String.format("%15s: %s\n", "Destino", this.destination));
         sb.append(String.format("%15s: %5.2f€\n", "Preço", this.price));
-        sb.append(String.format("%15s: %4.2f%%\n", "Honorarios", this.fees));
+        sb.append(String.format("%15s: %4.2f%%\n", "Honorarios", getFees()));
         sb.append(String.format("%15s: %4.2f€\n", "Preço Final", getPriceWithFees()));
-     
+
         return sb.toString();
     }
 
@@ -113,11 +113,10 @@ public class Transport {
      * 
      * @return o preço final com a inclusão dos honorários
      */
-    public double getPriceWithFees() {     
+    public double getPriceWithFees() {
         return this.price * (1.0 + (this.fees * 0.01));
     }
 
-    
     public String getTransportType() {
         return "Transporte genérico";
     }
